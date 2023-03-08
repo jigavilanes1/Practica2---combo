@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_cineModelStoreContainer" CdmEntityContainer="db_cineEntities">
+    <EntitySetMapping Name="tbl_genero">
+      <EntityTypeMapping TypeName="db_cineModel.tbl_genero">
+        <MappingFragment StoreEntitySet="tbl_genero">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_peliculas">
+      <EntityTypeMapping TypeName="db_cineModel.tbl_peliculas">
+        <MappingFragment StoreEntitySet="tbl_peliculas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="idgenero" ColumnName="idgenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usuarios">
+      <EntityTypeMapping TypeName="db_cineModel.tbl_usuarios">
+        <MappingFragment StoreEntitySet="tbl_usuarios">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,32 @@
+﻿@model Practica2.Models.ViewModels.PeliculasViewModel
+@{
+    ViewBag.Title = "Nueva Pelicula";
+    List<SelectListItem> lstGenero = (List<SelectListItem>)ViewBag.lstGeneros;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Nuevo", "Peliculas", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(d => d.Titulo)
+            @Html.TextBoxFor(d => d.Titulo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Titulo)
+            <br />
+            @Html.LabelFor(d => d.Duracion)
+            @Html.TextBoxFor(d => d.Duracion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Duracion)
+            <br />
+            @Html.LabelFor(d => d.IdGenero)
+            @Html.DropDownList("idgenero", lstGenero, null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdGenero)
+            <br />
+            <div style="text-align:right">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        }
+    </div>
+</div>

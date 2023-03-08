@@ -1,0 +1,27 @@
+﻿@model Practica2.Models.ViewModels.GeneroViewModel
+@{
+    ViewBag.Title = "Nuevo Genero";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Nuevo", "Genero", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Nombre)
+            <br />
+            @Html.LabelFor(d => d.Detalle)
+            @Html.TextBoxFor(d => d.Detalle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Detalle)
+            <br />
+            <div style="text-align:right">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        }
+    </div>
+</div>

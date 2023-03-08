@@ -1,0 +1,36 @@
+﻿@model List<Practica2.Models.TableViewModels.GeneroTableViewModel>
+
+@{
+    ViewBag.Title = "Genero";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-striped">
+            <tr class="bg-info">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Detalle</th>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (var oGenero in Model)
+            {
+                <tr>
+                    <th>@oGenero.Id</th>
+                    <td>@oGenero.Nombre</td>
+                    <td>@oGenero.Detalle</td>
+                    <td><button type="button" class="btn btn-info" onclick="document.location.href = '@Url.Content("~/Genero/Editar/" + oGenero.Id)'">Editar</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="document.location.href = '@Url.Content("~/Genero/Eliminar/" + oGenero.Id)'">Eliminar</button></td>
+                </tr>
+            }
+        </table>
+    <div>
+    @Html.ActionLink("Nuevo", "Nuevo", "Genero")
+</div>
+    </div>
+</div>

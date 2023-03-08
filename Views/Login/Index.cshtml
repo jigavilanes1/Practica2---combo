@@ -1,0 +1,27 @@
+﻿@model Practica2.Models.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(d => d.usuario)
+            @Html.TextBoxFor(d => d.usuario, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.usuario)
+            <br />
+            @Html.LabelFor(d => d.clave)
+            @Html.TextBoxFor(d => d.clave, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.clave)
+            <br />
+            <div style="text-align:right">
+                <input type="submit" class="btn btn-success" value="Ingresar" />
+            </div>
+        }
+    </div>
+</div>
